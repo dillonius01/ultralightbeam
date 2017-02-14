@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8080;
 
 
 const server = http.createServer((req, res) => {
-	console.log(`INCOMING! ${req.method} ${req.url} ${req.statusMessage}`);
+	console.log(`INCOMING! ${req.method} ${req.url}`);
 
 	if (req.url.match(/^\/file.*/)) {
 		routes.fileRouter(req, res);
@@ -16,5 +16,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-	console.log(`Listening on port ${PORT}`);
+	console.log(`Compromising your privacy on port ${PORT}`);
 });

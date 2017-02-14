@@ -24,9 +24,15 @@ module.exports = {
 		});
 
 		readableFileStream.on('end', () => {
-			console.log('All done, sending back now');
 			res.statusCode = 200;
 			res.end('mmkay');
 		});
+
+		readableFileStream.on('error', err => {
+			res.setHeader('Content-Type', 'text/plain');
+			res.statusCode = 500;
+			res.end(err.message);
+		});
+
 	}
 };
